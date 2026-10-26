@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión | Vivero Verde</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1B4D3E;
+            --secondary: #4A7C59;
+            --light: #F0F7F4;
+            --dark: #2D3748;
+            --accent: #E29578;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #fafbfc;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Header / Navbar */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-login {
+            background-color: var(--primary);
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn-login:hover {
+            background-color: var(--secondary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(27, 77, 62, 0.85), rgba(74, 124, 89, 0.85)), url('https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 10rem 2rem 6rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .btn-cta {
+            background-color: white;
+            color: var(--primary);
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.2s, background 0.3s;
+            display: inline-block;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-2px);
+            background-color: var(--light);
+        }
+
+        /* Features / Modules Section */
+        .features {
+            max-width: 1100px;
+            margin: 5rem auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 3rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            border-top: 4px solid var(--primary);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card i {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1.2rem;
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--dark);
+        }
+
+        .card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Tech Stack Section */
+        .tech-section {
+            background-color: var(--light);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .tech-section h2 {
+            color: var(--primary);
+            margin-bottom: 2rem;
+        }
+
+        .tech-badges {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: white;
+            padding: 0.85rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            color: var(--primary);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fa-solid.fa-seedling"></i> Vivero Verde
+            </div>
+            <a href="/login" class="btn-login"><i class="fa-solid fa-right-to-bracket"></i> Iniciar Sesión</a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Sistema Inteligente para la Gestión de Viveros</h1>
+        <p>Optimiza el control de inventarios, plantas ornamentales, abonos, clientes mayoristas y proveedores en una sola plataforma web integrada.</p>
+        <a href="/login" class="btn-cta">Acceder al Sistema</a>
+    </section>
+
+    <!-- Módulos / Características -->
+    <section class="features">
+        <h2>Módulos Principales del Sistema</h2>
+        <div class="grid">
+            <div class="card">
+                <i class="fa-solid fa-boxes-stacked"></i>
+                <h3>Gestión de Inventario</h3>
+                <p>Control detallado de existencias, precios y categorías para plantas, abonos y sustratos con operaciones CRUD completas.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-users"></i>
+                <h3>Clientes Mayoristas</h3>
+                <p>Registro y seguimiento de compradores frecuentes y mayoristas con validación de datos de contacto.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-truck-field"></i>
+                <h3>Proveedores</h3>
+                <p>Administración centralizada de proveedores de insumos, facilitando la reposición oportuna de mercancía.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-user-shield"></i>
+                <h3>Empleados y Seguridad</h3>
+                <p>Control de acceso seguro mediante autenticación (Login) y encriptación de contraseñas para el personal autorizado.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tecnologías -->
+    <section class="tech-section">
+        <h2>Tecnologías Utilizadas</h2>
+        <div class="tech-badges">
+            <div class="badge"><i class="fa-brands fa-python" style="color: #3776ab;"></i> Python & Flask</div>
+            <div class="badge"><i class="fa-brands fa-html5" style="color: #e34f26;"></i> HTML5 & CSS3</div>
+            <div class="badge"><i class="fa-solid fa-database" style="color: #003b57;"></i> Base de Datos Relacional (SQLite / MySQL)</div>
+            <div class="badge"><i class="fa-brands fa-git-alt" style="color: #f05032;"></i> Control de Versiones (Git)</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Vivero Verde - Proyecto Académico | UNIMINUTO (NRC 5252)</p>
+    </footer>
+
+</body>
+</html>
